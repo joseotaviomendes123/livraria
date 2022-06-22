@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>Livraria</title>
+</head>
+<body>
+      <div id="container">
+
+<h1>Gerenciamento de Livros</h1>
+
+    <form action=""> 
+        <div id="menu">
+            <div>
+                <label for="titúlo">Titúlo</label>
+                <input type="text" name="titúlo">
+            </div>
+
+            <div>
+                <label for="Autor">Autor</label>
+                <input type="text" name="autor">
+            </div>
+
+            <div>
+                <label for="Valor">Valor</label>
+                <input type="text" name="Valor">
+            </div>
+            <div>
+            <label for="Categorias">Categorias</label>
+            <select name="Categoria" id="Titúlo">
+                <option value="" selected disabled>Selecione</option>
+                <option value="Terror">Terror</option>
+                <option value="Romance">Romance</option>
+                <option value="Ação">Ação</option>
+                <option value="Aventura">Aventura</option>
+            </select>
+            </div>
+
+
+
+        </div>
+
+    <button type="button" onclick="cadastrar()">Cadastrar</button>
+
+</form>
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
