@@ -34,8 +34,6 @@ div#menu{
 #menu div{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 30px;
-    gap: 25px;
 }
 
 div label{
