@@ -26,7 +26,7 @@ $valor = $_POST['valor'];
         // query de inserção de dados no BD mySQL
       $sql = "INSERT into 
         tb_livros
-          (titulo,autor,valor,categoria)
+          (titulo,autor,valor,id_categorias)
         VALUES 
               ('$titulo','$autor','$valor','$categoria')"; 
 
@@ -37,18 +37,22 @@ $valor = $_POST['valor'];
         $comando->execute();
 
         //criar um array para resposta ao usúario
-        $resposta = array("Resposta"=>"ok","mensagem"=>"Cadastro realizado com sucesso");
+        $resposta = array("resposta"=>"OK","mensagem"=>"Cadastro realizado com sucesso");
 
-      // converte o array resposta em JSON 
+      
+      } catch(PDOException $e) {
+        // aqui é tratado o erro e retornado com sucesso
+        $resposta = array("resposta"=>"Erro","mensagem"=>$e->getMessage());
+      
+      }
+
+// converte o array resposta em JSON 
       // JSON_UNESCAPED_UNICODE = Manter o arquivo com mapa de caracter padrão 
       $json = json_encode($resposta,JSON_UNESCAPED_UNICODE);
 
       echo $json;
 
        // echo "Cadastro realizado com sucesso!";
-      } catch(PDOException $e) {
-        echo "Ti fude rapa: " . $e->getMessage();
-      }
 
 // final da conexao
 ?>

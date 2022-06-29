@@ -45,23 +45,27 @@ const cadastrar = () => {
         'Content-type': 'application/x-www-form-urlencoded'
       }
       
-    }).then(function(response){
-      response.json()
-      .then(resposta=>{
+
+      // apagar o d baixo
+
+
+    })
+    .then(function(response){
+      response.json().then(response=>{
         // aqui é onde iremos receber e tratar a resposta do PHP
-        Swal.fire({
-          title: 'Custom width, padding, color, background.',
-          width: 600,
-          padding: '3em',
-          color: '#716add',
-          background: '#fff url(/images/trees.png)',
-          backdrop: `
-            rgba(0,0,123,0.4)
-            url("/images/nyan-cat.gif")
-            left top
-            no-repeat
-          `
-        })
+        if (response.resposta == 'OK') {
+          Swal.fire(
+            'Tudo certo',
+            response.mensagem,
+            'sucess'
+          )
+        } else {
+          Swal.fire(
+            'Erro',
+            response.mensagem,
+            'error'
+          )
+        }
 
         // resetar o formulário - limpar os campos
         document.getElementById('form-cadastrar').reset()
@@ -74,3 +78,15 @@ const cadastrar = () => {
    // Forma de função padrão
   // Function Cadastrar(){
  //  }
+
+
+
+ //- inicio da função listar
+const listar = () =>{
+    fetch('backend/listar-livro.php',)
+
+}
+
+
+
+ // final da função listar
